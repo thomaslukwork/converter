@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-tab3',
+  selector: 'app-areaTab',
   templateUrl: 'areaTab.page.html',
   styleUrls: ['areaTab.page.scss']
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-tab2',
+  selector: 'app-lengthTab',
   templateUrl: 'lengthTab.page.html',
   styleUrls: ['lengthTab.page.scss']
 })
