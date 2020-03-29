@@ -8,12 +8,12 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'temperatureTab',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../temperatureTab/tab1.module').then(m => m.Tab1PageModule)
+              import('../temperatureTab/temperatureTab.module').then(m => m.TemperatureTabPageModule)
           }
         ]
       },
@@ -39,14 +39,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/temperatureTab',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/temperatureTab',
     pathMatch: 'full'
   }
 ];
