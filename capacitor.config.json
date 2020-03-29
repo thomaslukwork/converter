@@ -1,0 +1,8 @@
+{
+  "appId": "com.lifestyle.convertor",
+  "appName": "converter",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
