@@ -7,52 +7,38 @@ import { Unit } from '../unit.model';
   styleUrls: ['temperatureTab.page.scss']
 })
 export class TemperatureTabPage {
-
   customPopoverOptions: any = {
     header: 'Temperature',
-    subHeader: 'Select a unit is going to be converted'
+    subHeader: 'Select a unit'
   };
 
-  fromSelectedId: string;
-  toSelectedId: string;
-
-  // selectedUnit: Unit;
   units: Unit[] = [
     {
       type: 'temp',
       id: 'ce',
       unitDesc: 'Celsius',
-      ratio: 1
+      ratio: 1.2
     },
     {
       type: 'temp',
       id: 'fa',
       unitDesc: 'Fahrenheit',
-      ratio: 1
+      ratio: 1.8
     }
   ];
 
+  fromValue = 0.000;
+  toValue = 0.000;
+  fromSelectedUnit = this.units[0];
+  toSelectedUnit = this.units[0];
 
   onChange = () => {
-    console.log('from id == ' + this.fromSelectedId);
-    console.log('to id == ' + this.toSelectedId);
+    console.log('from value == ' + this.fromValue);
+    console.log('to value == ' + this.toValue);
+    console.log('from selected id == ' + this.fromSelectedUnit.id);
+    console.log('to selected id == ' + this.toSelectedUnit.id);
 
-    // console.log('selectedUnit id = ' + this.selectedUnit.id);
+    this.toValue = this.fromValue * 2;
   }
-
-
-  // public optionsFn(): void {
-  //   //here item is an object 
-  //   console.log(this.unit);
-
-  // }
-  // public onChange(): void {
-  //   console.log('Selected:' + this.place);
-  //   let item = this.place;
-  //   console.log('Selected:' + item.id);
-
-  // }
-
   constructor() { }
-
 }

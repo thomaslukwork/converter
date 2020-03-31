@@ -13,20 +13,22 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-input type="number" clear-input=true [(ngModel)]="fromValue" placeholder="<Input>" (ionBlur)="onChange();"></ion-input>
   <ion-item>
     <ion-label>From</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" [(ngModel)]="fromSelectedId"
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" [(ngModel)]="fromSelectedUnit"
       (ionChange)="onChange();">
-      <ion-select-option value="{{unit.id}}" *ngFor="let unit of units">{{ unit.unitDesc }}</ion-select-option>
+      <ion-select-option [value]="unit" *ngFor="let unit of units">{{ unit.unitDesc }}</ion-select-option>
     </ion-select>
   </ion-item>
 
+  <ion-input type="number" [(ngModel)]="toValue" readonly></ion-input>
 
   <ion-item>
     <ion-label>To</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" [(ngModel)]="toSelectedId"
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" [(ngModel)]="toSelectedUnit"
       (ionChange)="onChange();">
-      <ion-select-option value="{{unit.id}}" *ngFor="let unit of units">{{ unit.unitDesc }}</ion-select-option>
+      <ion-select-option [value]="unit" *ngFor="let unit of units">{{ unit.unitDesc }}</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-content>
