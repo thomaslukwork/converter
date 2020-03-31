@@ -12,7 +12,7 @@
       <ion-title size="large">Temperature</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  <!-- 
   <ion-input type="number" clear-input=true [(ngModel)]="fromValue" placeholder="<Input>" (ionBlur)="onChange();"></ion-input>
   <ion-item>
     <ion-label>From</ion-label>
@@ -30,5 +30,10 @@
       (ionChange)="onChange();">
       <ion-select-option [value]="unit" *ngFor="let unit of units">{{ unit.unitDesc }}</ion-select-option>
     </ion-select>
-  </ion-item>
+  </ion-item> -->
+
+  <ion-button size="large" (click)="showPicker()">
+    Multiple Column Ionic Picker
+  </ion-button>
+
 </ion-content>
