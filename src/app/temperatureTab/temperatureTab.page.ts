@@ -16,13 +16,13 @@ export class TemperatureTabPage {
     {
       type: 'temp',
       id: 'ce',
-      unitDesc: 'Celsius',
+      unitDesc: 'Celsius (°C)',
       ratio: 1.2
     },
     {
       type: 'temp',
       id: 'fa',
-      unitDesc: 'Fahrenheit',
+      unitDesc: 'Fahrenheit (°F)',
       ratio: 1.8
     }
   ];
@@ -33,12 +33,20 @@ export class TemperatureTabPage {
   toSelectedUnit = this.units[0];
 
   onChange = () => {
-    console.log('from value == ' + this.fromValue);
-    console.log('to value == ' + this.toValue);
-    console.log('from selected id == ' + this.fromSelectedUnit.id);
-    console.log('to selected id == ' + this.toSelectedUnit.id);
+    // console.log('from value == ' + this.fromValue);
+    // console.log('to value == ' + this.toValue);
+    // console.log('from selected id == ' + this.fromSelectedUnit.id);
+    // console.log('to selected id == ' + this.toSelectedUnit.id);
 
-    this.toValue = this.fromValue * 2;
+    if (this.fromSelectedUnit.id === 'ce' && this.toSelectedUnit.id === 'fa') {
+      this.toValue = (this.fromValue * 9 / 5) + 32;
+    } else if (this.fromSelectedUnit.id === 'fa' && this.toSelectedUnit.id === 'ce') {
+      this.toValue = (this.fromValue - 32) * 5 / 9;
+    } else {
+      // fromSelectedUnit.Id = toSelectedUnit.Id
+      this.toValue = this.fromValue;
+    }
+
   }
   constructor() { }
 }
