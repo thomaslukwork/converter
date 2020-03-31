@@ -13,5 +13,20 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Temperature Page"></app-explore-container>
+  <ion-item>
+    <ion-label>From</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" [(ngModel)]="fromSelectedId"
+      (ionChange)="onChange();">
+      <ion-select-option value="{{unit.id}}" *ngFor="let unit of units">{{ unit.unitDesc }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>To</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" [(ngModel)]="toSelectedId"
+      (ionChange)="onChange();">
+      <ion-select-option value="{{unit.id}}" *ngFor="let unit of units">{{ unit.unitDesc }}</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-content>
