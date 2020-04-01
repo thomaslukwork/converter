@@ -12,28 +12,16 @@
       <ion-title size="large">Temperature</ion-title>
     </ion-toolbar>
   </ion-header>
-  <!-- 
-  <ion-input type="number" clear-input=true [(ngModel)]="fromValue" placeholder="<Input>" (ionBlur)="onChange();"></ion-input>
-  <ion-item>
-    <ion-label>From</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" [(ngModel)]="fromSelectedUnit"
-      (ionChange)="onChange();">
-      <ion-select-option [value]="unit" *ngFor="let unit of units">{{ unit.unitDesc }}</ion-select-option>
-    </ion-select>
-  </ion-item>
 
+  <ion-input type="number" clear-input=true [(ngModel)]="fromValue" placeholder="<Input>" (ionBlur)="onChange();">
+  </ion-input>
   <ion-input type="number" [(ngModel)]="toValue" readonly></ion-input>
-
-  <ion-item>
-    <ion-label>To</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" [(ngModel)]="toSelectedUnit"
-      (ionChange)="onChange();">
-      <ion-select-option [value]="unit" *ngFor="let unit of units">{{ unit.unitDesc }}</ion-select-option>
-    </ion-select>
-  </ion-item> -->
+  
+  <ion-label>{{fromSelectedUnit.unitDesc}}</ion-label>
+  <ion-label>{{toSelectedUnit.unitDesc}}</ion-label>
 
   <ion-button size="large" (click)="showPicker()">
-    Multiple Column Ionic Picker
+    Select Unit
   </ion-button>
 
 </ion-content>

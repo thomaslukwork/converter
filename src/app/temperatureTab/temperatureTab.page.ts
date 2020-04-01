@@ -29,28 +29,15 @@ export class TemperatureTabPage {
     }
   ];
 
-  // fromValue = 0.000;
-  // toValue = 0.000;
-  // fromSelectedUnit = this.units[0];
-  // toSelectedUnit = this.units[0];
+  fromValue = 0.000;
+  toValue = 0.000;
+  fromSelectedUnit = this.units[0];
+  toSelectedUnit = this.units[0];
 
-  // onChange = () => {
-  //   // console.log('from value == ' + this.fromValue);
-  //   // console.log('to value == ' + this.toValue);
-  //   // console.log('from selected id == ' + this.fromSelectedUnit.id);
-  //   // console.log('to selected id == ' + this.toSelectedUnit.id);
-
-  //   if (this.fromSelectedUnit.id === 'ce' && this.toSelectedUnit.id === 'fa') {
-  //     this.toValue = (this.fromValue * 9 / 5) + 32;
-  //   } else if (this.fromSelectedUnit.id === 'fa' && this.toSelectedUnit.id === 'ce') {
-  //     this.toValue = (this.fromValue - 32) * 5 / 9;
-  //   } else {
-  //     // fromSelectedUnit.Id = toSelectedUnit.Id
-  //     this.toValue = this.fromValue;
-  //   }
-
-  // }
-  resultValue: { 'col-0': { text: string; value: any }; 'col-1': { text: string; value: any } };
+  resultValue: {
+    'col-0': { text: string; value: Unit };
+    'col-1': { text: string; value: Unit }
+  };
 
   gadgets: any[] = [
     [
@@ -67,6 +54,22 @@ export class TemperatureTabPage {
 
   constructor(private pickerController: PickerController) { }
 
+  onChange = () => {
+    // console.log('from value == ' + this.fromValue);
+    // console.log('to value == ' + this.toValue);
+    // console.log('from selected id == ' + this.fromSelectedUnit.id);
+    // console.log('to selected id == ' + this.toSelectedUnit.id);
+
+    if (this.fromSelectedUnit.id === 'ce' && this.toSelectedUnit.id === 'fa') {
+      this.toValue = (this.fromValue * 9 / 5) + 32;
+    } else if (this.fromSelectedUnit.id === 'fa' && this.toSelectedUnit.id === 'ce') {
+      this.toValue = (this.fromValue - 32) * 5 / 9;
+    } else {
+      // fromSelectedUnit.Id = toSelectedUnit.Id
+      this.toValue = this.fromValue;
+    }
+  }
+
   async showPicker() {
     const options: PickerOptions = {
       buttons: [
@@ -77,10 +80,12 @@ export class TemperatureTabPage {
         {
           text: 'OK',
           handler: (value: any) => {
-            // console.log(value);
             this.resultValue = value;
-            console.log(this.resultValue['col-0'].value);
-            console.log(this.resultValue['col-1'].value);
+            // console.log(this.resultValue['col-0'].value);
+            // console.log(this.resultValue['col-1'].value);
+            this.fromSelectedUnit = this.resultValue['col-0'].value;
+            this.toSelectedUnit = this.resultValue['col-1'].value;
+            this.onChange();
           }
         }
       ],
@@ -106,7 +111,7 @@ export class TemperatureTabPage {
     for (let i = 0; i < this.numOptions; i++) {
       options.push({
         text: this.gadgets[columIndex][i % this.numOptions],
-        value: this.units[i].id
+        value: this.units[i]
       });
     }
     return options;
