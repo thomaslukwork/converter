@@ -37,13 +37,16 @@
     "@angular/compiler": "~8.2.14",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
-    "@babel/plugin-proposal-numeric-separator": "^7.8.3",
     "@capacitor/cli": "1.5.2",
     "@ionic/angular-toolkit": "^2.1.1",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "@babel/compat-data": "7.9.0",
+    "@babel/preset-env": "7.9.0",
+    "babel-loader": "^8.1.0",
     "codelyzer": "^5.0.0",
+    "jasmine": "^3.5.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -55,6 +58,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
+  },
+  "resolutions": {
+    "@babel/preset-env": "^7.9.0"
   },
   "description": "An Ionic project"
 }
