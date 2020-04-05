@@ -9,11 +9,6 @@ import { PickerOptions } from '@ionic/core';
   styleUrls: ['temperatureTab.page.scss']
 })
 export class TemperatureTabPage {
-  // customPopoverOptions: any = {
-  //   header: 'Temperature',
-  //   subHeader: 'Select a unit'
-  // };
-
   units: Unit[] = [
     {
       type: 'temp',
@@ -24,7 +19,7 @@ export class TemperatureTabPage {
     {
       type: 'temp',
       id: 'fa',
-      unitDesc: 'Fahrenheit (°F)',
+      unitDesc: 'Fahrenheit (°F) aaaaa aa',
       ratio: 1.8
     }
   ];
@@ -89,6 +84,7 @@ export class TemperatureTabPage {
           }
         }
       ],
+      animated: true,
       columns: this.getColumns()
     };
     const picker = await this.pickerController.create(options);
