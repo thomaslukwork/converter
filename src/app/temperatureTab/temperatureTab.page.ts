@@ -19,7 +19,7 @@ export class TemperatureTabPage {
     {
       type: 'temp',
       id: 'fa',
-      unitDesc: 'Fahrenheit (°F) aaaaa aa',
+      unitDesc: 'Fahrenheit (°F)',
       ratio: 1.8
     }
   ];
