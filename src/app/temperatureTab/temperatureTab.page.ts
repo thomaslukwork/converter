@@ -28,6 +28,7 @@ export class TemperatureTabPage {
   toValue = 0.000;
   fromSelectedUnit = this.units[0];
   toSelectedUnit = this.units[0];
+  allDescriptions: string[] = [];
 
   resultValue: {
     'col-0': { text: string; value: Unit };
@@ -35,19 +36,21 @@ export class TemperatureTabPage {
   };
 
   gadgets: any[] = [
-    [
-      this.units[0].unitDesc,
-      this.units[1].unitDesc
-    ],
-    [
-      this.units[0].unitDesc,
-      this.units[1].unitDesc
-    ]
+    this.allDescriptions,
+    this.allDescriptions
   ];
   numColumns = 2; // number of columns to display on picker over lay
   numOptions = this.units.length;  // number of items (or rows) to display on picker over lay
 
-  constructor(private pickerController: PickerController) { }
+  constructor(private pickerController: PickerController) {
+    this.setAllDesc();
+  }
+
+  setAllDesc() {
+    for (let i = 0; i < this.units.length; i++) {
+      this.allDescriptions[i] = this.units[i].unitDesc;
+    }
+  }
 
   onChange = () => {
     // console.log('from value == ' + this.fromValue);
