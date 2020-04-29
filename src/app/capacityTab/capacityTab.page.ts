@@ -12,57 +12,81 @@ export class CapacityTabPage {
   units: Unit[] = [
     {
       type: 'capacity',
-      id: 'mi',
-      unitDesc: 'square mile (mi²)',
+      id: 'ukgal',
+      unitDesc: 'UK gallon (gal)',
       ratio: 1
     },
     {
       type: 'capacity',
-      id: 'ac',
-      unitDesc: 'acre',
-      ratio: 640
+      id: 'ukqt',
+      unitDesc: 'UK quart (qt)',
+      ratio: 4
+    },
+    {
+      type: 'capacity',
+      id: 'ukpt',
+      unitDesc: 'UK pint (pt)',
+      ratio: 8
+    },
+    {
+      type: 'capacity',
+      id: 'oz',
+      unitDesc: 'fluid ounce (fl oz)',
+      ratio: 160
+    },
+    {
+      type: 'capacity',
+      id: 'usgal',
+      unitDesc: 'US gallon (gal)',
+      ratio: 1.201
+    },
+    {
+      type: 'capacity',
+      id: 'usqt',
+      unitDesc: 'US quart (qt)',
+      ratio: 4.804
+    },
+    {
+      type: 'capacity',
+      id: 'uspt',
+      unitDesc: 'US pint (pt)',
+      ratio: 9.608000000000001
+    },
+    {
+      type: 'capacity',
+      id: 'l',
+      unitDesc: 'litre (l)',
+      ratio: 4.54609188
+    },
+    {
+      type: 'capacity',
+      id: 'ml',
+      unitDesc: 'mililitre (ml)',
+      ratio: 4546.09188
     },
     {
       type: 'capacity',
       id: 'yd',
-      unitDesc: 'square yard (yd²)',
-      ratio: 3097600
+      unitDesc: 'cubic yard (yd³)',
+      ratio: 0.005944057374162267
+    },
+    {
+      type: 'capacity',
+      id: 'cc',
+      unitDesc: 'cubic centimetre (cc)',
+      ratio: 4546.09188
     },
     {
       type: 'capacity',
       id: 'ft',
-      unitDesc: 'square foot (ft²)',
-      ratio: 27878400
+      unitDesc: 'cubic foot (ft³)',
+      ratio: 0.1604897763303859
     },
     {
       type: 'capacity',
       id: 'in',
-      unitDesc: 'square inch (in²)',
-      ratio: 4014489600
-    },
-    {
-      type: 'capacity',
-      id: 'km',
-      unitDesc: 'square kilometre (km²)',
-      ratio: 2.5899881006
-    },
-    {
-      type: 'capacity',
-      id: 'ha',
-      unitDesc: 'hectare (ha²)',
-      ratio: 258.99881006
-    },
-    {
-      type: 'capacity',
-      id: 'm',
-      unitDesc: 'square metre (m²)',
-      ratio: 2589988.1006
-    },
-    {
-      type: 'capacity',
-      id: 'cm',
-      unitDesc: 'square centimetre (cm²)',
-      ratio: 25899881006
+      unitDesc: 'cubic inch (in³)',
+      ratio: 277.325871771601
     }
   ];
 
