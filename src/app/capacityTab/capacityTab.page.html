@@ -6,6 +6,42 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <br>
+      <br>
+      <br>
+      <br>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-input type="number" clearInput=true [(ngModel)]="fromValue" placeholder="<Input>" (ionBlur)="onChange()">
+        </ion-input>
+      </ion-col>
+      <ion-col size="6">
+        <ion-input type="number" [(ngModel)]="toValue" readonly></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label class="my-desc-label">{{fromSelectedUnit.unitDesc}}</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label stacked class="my-desc-label">{{toSelectedUnit.unitDesc}}</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button size="standard" (click)="showPicker()">
+          Select Unit
+        </ion-button>
+      </ion-col>
+      <ion-col size="6"> </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
