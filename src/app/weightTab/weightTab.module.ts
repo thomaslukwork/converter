@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-import { LengthTabPage } from './lengthTab.page';
+import { WeightTabPage } from './weightTab.page';
 
 @NgModule({
   imports: [
@@ -12,8 +12,8 @@ import { LengthTabPage } from './lengthTab.page';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    RouterModule.forChild([{ path: '', component: LengthTabPage }])
+    RouterModule.forChild([{ path: '', component: WeightTabPage }])
   ],
-  declarations: [LengthTabPage]
+  declarations: [WeightTabPage]
 })
-export class LengthTabPageModule { }
+export class WeightTabPageModule { }
