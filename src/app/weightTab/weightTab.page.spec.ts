@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-import { LengthTabPage } from './lengthTab.page';
+import { WeightTabPage } from './weightTab.page';
 
-describe('LengthTabPage', () => {
-  let component: LengthTabPage;
-  let fixture: ComponentFixture<LengthTabPage>;
+describe('WeightTabPage', () => {
+  let component: WeightTabPage;
+  let fixture: ComponentFixture<WeightTabPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LengthTabPage],
+      declarations: [WeightTabPage],
       imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LengthTabPage);
+    fixture = TestBed.createComponent(WeightTabPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

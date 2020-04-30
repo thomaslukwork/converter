@@ -48,6 +48,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'weightTab',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../weightTab/weightTab.module').then(m => m.WeightTabPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/temperatureTab',
         pathMatch: 'full'
@@ -65,4 +75,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

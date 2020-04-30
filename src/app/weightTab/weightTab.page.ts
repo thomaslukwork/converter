@@ -4,89 +4,59 @@ import { PickerOptions } from '@ionic/core';
 import { Unit } from '../unit.model';
 
 @Component({
-  selector: 'app-lengthTab',
-  templateUrl: 'lengthTab.page.html',
-  styleUrls: ['lengthTab.page.scss']
+  selector: 'app-weight-tab',
+  templateUrl: './weightTab.page.html',
+  styleUrls: ['./weightTab.page.scss'],
 })
-export class LengthTabPage {
+export class WeightTabPage {
   units: Unit[] = [
     {
-      type: 'length',
-      id: 'mi',
-      unitDesc: 'mile (mi)',
+      type: 'weight',
+      id: 't',
+      unitDesc: 'ton (t)',
       ratio: 1
     },
     {
-      type: 'length',
-      id: 'fur',
-      unitDesc: 'furlong (fur)',
-      ratio: 8
+      type: 'weight',
+      id: 'cwt',
+      unitDesc: 'hundredWeight (cwt)',
+      ratio: 20
     },
     {
-      type: 'length',
-      id: 'ch',
-      unitDesc: 'chain (ch)',
-      ratio: 80
+      type: 'weight',
+      id: 'st',
+      unitDesc: 'stone (st)',
+      ratio: 160
     },
     {
-      type: 'length',
-      id: 'yd',
-      unitDesc: 'yard (yd)',
-      ratio: 1760
+      type: 'weight',
+      id: 'lb',
+      unitDesc: 'pound (lb)',
+      ratio: 2240
     },
     {
-      type: 'length',
-      id: 'ft',
-      unitDesc: 'foot (ft)',
-      ratio: 5280
+      type: 'weight',
+      id: 'oz',
+      unitDesc: 'ounce (oz)',
+      ratio: 35840
     },
     {
-      type: 'length',
-      id: 'in',
-      unitDesc: 'inch (in)',
-      ratio: 63360
+      type: 'weight',
+      id: 'to',
+      unitDesc: 'tonnes',
+      ratio: 1.016064
     },
     {
-      type: 'length',
-      id: 'km',
-      unitDesc: 'kilometre (km)',
-      ratio: 1.609344
+      type: 'weight',
+      id: 'kg',
+      unitDesc: 'kilogram (kg)',
+      ratio: 1016.064
     },
     {
-      type: 'length',
-      id: 'hm',
-      unitDesc: 'hectometre (hm)',
-      ratio: 16.09344
-    },
-    {
-      type: 'length',
-      id: 'dam',
-      unitDesc: 'decametre (dam)',
-      ratio: 160.9344
-    },
-    {
-      type: 'length',
-      id: 'm',
-      unitDesc: 'metre (m)',
-      ratio: 1609.344
-    },
-    {
-      type: 'length',
-      id: 'dm',
-      unitDesc: 'decimetre (dm)',
-      ratio: 16093.44
-    },
-    {
-      type: 'length',
-      id: 'cm',
-      unitDesc: 'centimetre (cm)',
-      ratio: 160934.4
-    },
-    {
-      type: 'length',
-      id: 'mm',
-      unitDesc: 'millimetre (mm)',
-      ratio: 1609344
+      type: 'weight',
+      id: 'g',
+      unitDesc: 'gram (g)',
+      ratio: 1016064
     }
   ];
 
