@@ -38,6 +38,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'capacityTab',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../capacityTab/capacityTab.module').then(m => m.CapacityTabPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/temperatureTab',
         pathMatch: 'full'
