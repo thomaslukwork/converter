@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
+import { TabsService } from '../tabs/tabs.service';
 import { Unit } from '../unit.model';
 
 @Component({
@@ -42,7 +43,9 @@ export class TemperatureTabPage {
   numColumns = 2; // number of columns to display on picker over lay
   numOptions = this.units.length;  // number of items (or rows) to display on picker over lay
 
-  constructor(private pickerController: PickerController) {
+  constructor(
+    private pickerController: PickerController,
+    private tabsService: TabsService) {
     this.setAllDesc();
   }
 
@@ -57,11 +60,11 @@ export class TemperatureTabPage {
     // console.log('to value == ' + this.toValue);
     // console.log('from selected id == ' + this.fromSelectedUnit.id);
     // console.log('to selected id == ' + this.toSelectedUnit.id);
-
+    this.fromValue = this.tabsService.getRoundingValue(this.fromValue);
     if (this.fromSelectedUnit.id === 'ce' && this.toSelectedUnit.id === 'fa') {
-      this.toValue = (this.fromValue * 9 / 5) + 32;
+      this.toValue = this.tabsService.getRoundingValue((this.fromValue * 9 / 5) + 32);
     } else if (this.fromSelectedUnit.id === 'fa' && this.toSelectedUnit.id === 'ce') {
-      this.toValue = (this.fromValue - 32) * 5 / 9;
+      this.toValue = this.tabsService.getRoundingValue((this.fromValue - 32) * 5 / 9);
     } else {
       // fromSelectedUnit.Id = toSelectedUnit.Id
       this.toValue = this.fromValue;
