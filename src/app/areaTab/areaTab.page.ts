@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
+import { TabsService } from '../tabs/tabs.service';
 import { Unit } from '../unit.model';
+
 
 @Component({
   selector: 'app-areaTab',
@@ -84,7 +86,9 @@ export class AreaTabPage {
   numColumns = 2; // number of columns to display on picker over lay
   numOptions = this.units.length;  // number of items (or rows) to display on picker over lay
 
-  constructor(private pickerController: PickerController) {
+  constructor(
+    private pickerController: PickerController,
+    private tabsService: TabsService) {
     this.setAllDesc();
   }
 
@@ -95,7 +99,8 @@ export class AreaTabPage {
   }
 
   onChange = () => {
-    this.toValue = this.fromValue * this.toSelectedUnit.ratio / this.fromSelectedUnit.ratio;
+    this.fromValue = this.tabsService.getRoundingValue(this.fromValue);
+    this.toValue = this.tabsService.getRoundingValue(this.fromValue * this.toSelectedUnit.ratio / this.fromSelectedUnit.ratio);
   }
 
   async showPicker() {
