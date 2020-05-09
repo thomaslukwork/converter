@@ -66,6 +66,7 @@ export class WeightTabPage {
   fromSelectedUnit = this.units[0];
   toSelectedUnit = this.units[0];
   allDescriptions: string[] = [];
+  selectedFromToIndex: number[] = [0, 0];
 
   resultValue: {
     'col-0': { text: string; value: Unit };
@@ -111,6 +112,10 @@ export class WeightTabPage {
             // console.log(this.resultValue['col-1'].value);
             this.fromSelectedUnit = this.resultValue['col-0'].value;
             this.toSelectedUnit = this.resultValue['col-1'].value;
+
+            this.selectedFromToIndex[0] = this.tabsService.getPreSelectedIndex(this.units, this.fromSelectedUnit);
+            this.selectedFromToIndex[1] = this.tabsService.getPreSelectedIndex(this.units, this.toSelectedUnit);
+
             this.onChange();
           }
         }
@@ -126,6 +131,7 @@ export class WeightTabPage {
     for (let i = 0; i < this.numColumns; i++) {
       columns.push({
         name: `col-${i}`,
+        selectedIndex: this.selectedFromToIndex[i],
         options: this.getColumnOptions(i)
       });
     }
